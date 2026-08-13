@@ -221,12 +221,6 @@ def solver_difusao_implicito(V, dx, dt, D, theta=0.5):
 
 This project is licensed under the Apache License, Version 2.0 - see the LICENSE file for details.
 
-## 👤 Author
-
-**Your Name**
-- GitHub: [@Aronquee](https://github.com/Aronquee)
-- LinkedIn: [Matheus Aronque](https://linkedin.com/in/matheusaronque)
-
 ## Acknowledgments
 
 - This project was developed as part of a **Dynamical Systems Modeling** course
