@@ -8,7 +8,7 @@ A computational model of cardiac tissue electrophysiology using the FitzHugh-Nag
 
 ![Wave Propagation Animation](images/propagation_animation.gif)
 
-## 📋 Overview
+## Overview
 
 Cardiac tissue is an electrically active medium where action potentials—rapid depolarization followed by repolarization—drive rhythmic contraction. Understanding how electrical stimuli initiate self-sustaining waves is crucial for studying defibrillation, arrhythmias, and pacemaker design.
 
@@ -18,11 +18,11 @@ This project models cardiac tissue as a 2D continuous medium governed by a react
 - "All-or-nothing" behavior
 - Wave propagation through diffusive coupling
 
-## 🎯 Key Questions
+## Key Questions
 
 **What is the relationship between stimulus intensity (I_amp) and duration (t_dur) required to trigger a self-sustaining propagating wave in 2D cardiac tissue?**
 
-## 🔬 Model Description
+## Model Description
 
 ### Cellular Dynamics: FitzHugh-Nagumo
 
@@ -71,7 +71,7 @@ where:
 | **Explicit (Euler Forward)** | $V^{n+1} = V^n + \Delta t \cdot D \nabla^2 V^n$ | Conditional (CFL: $\Delta t \le \Delta x^2 / 4D$) | Fast per step, many steps needed |
 | **Implicit (Crank-Nicolson)** | $(I - \frac{\Delta t D}{2}\nabla^2) V^{n+1} = (I + \frac{\Delta t D}{2}\nabla^2) V^n$ | Unconditional | Slower per step, fewer steps |
 
-## 📊 Results
+## Results
 
 ### Strength-Duration Curve
 
@@ -102,7 +102,7 @@ When the explicit method violates the CFL condition ($\Delta t > \Delta x^2/4D$)
 
 ![Stability Test](images/stability_test.png)
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -135,7 +135,7 @@ jupyter notebook notebooks/Complete_Notebook.ipynb
 - Matplotlib
 - Jupyter Notebook
 
-## 💻 Code Structure
+## Code Structure
 
 ```
 cardiac-modeling/
@@ -187,7 +187,7 @@ def find_threshold(t_dur, metodo='explicito', tol=0.1):
     ...
 ```
 
-## 🧪 Performance Optimizations
+## Performance Optimizations
 
 The implicit solver uses **LU factorization caching** to avoid rebuilding and refactoring the sparse matrix at each time step—since the matrix depends only on grid parameters ($N_x, N_y, dx, dt, D$), not the solution itself.
 
@@ -213,19 +213,19 @@ def implicit_diffusion_solver(V, dx, dt, D, theta=0.5):
 - **implicit**: Scales as $O(N^{1.5})$ due to LU fill-in but maintains constant time steps
 
 
-## 📚 References
+## References
 
 - FitzHugh, R. (1961). Impulses and physiological states in theoretical models of nerve membrane. *Biophysical Journal*, 1(6), 445-466.
 - Nagumo, J., Arimoto, S., & Yoshizawa, S. (1962). An active pulse transmission line simulating nerve axon. *Proceedings of the IRE*, 50(10), 2061-2070.
 - Aliev, R. R., & Panfilov, A. V. (1996). A simple two-variable model of cardiac excitation. *Chaos, Solitons & Fractals*, 7(3), 293-301.
 - Clayton, R. H., Bernus, O., Cherry, E. M., et al. (2011). Models of cardiac tissue electrophysiology: progress, challenges and open questions. *Progress in Biophysics and Molecular Biology*, 104(1-3), 22-48.
 
-## 📝 License
+## License
 
 This project is licensed under the Apache License, Version 2.0 - see the LICENSE file for details.
 
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - This project was developed as part of a **Dynamical Systems Modeling** course
 - Special thanks to Ronny Calixto for guidance
